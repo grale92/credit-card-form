@@ -1,5 +1,11 @@
+import FormContainer from "../FormContainer";
+import { Container, CreditCard } from "./Styles";
+
 export default function FormCard() {
   return (
-    <div>FormCard</div>
+    <Container>
+      <CreditCard />
+      <FormContainer />
+    </Container>
   );
 }
