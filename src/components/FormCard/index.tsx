@@ -1,5 +1,6 @@
+import CreditCard from "../CreditCard";
 import FormContainer from "../FormContainer";
-import { Container, CreditCard } from "./Styles";
+import { Container } from "./Styles";
 
 export default function FormCard() {
   return (

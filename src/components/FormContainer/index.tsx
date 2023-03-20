@@ -1,32 +1,63 @@
-import { Input, Label } from "./Styles";
+import { Input, InputGroup, Label } from "./Styles";
 
 export default function FormContainer() {
   return (
     <>
-      <Label htmlFor="cardNumber">Numero della carta:</Label>
-      <Input
-        id="cardNumber"
-        type="text"
-        required
-      />
-      <Label htmlFor="cardName">Nome sulla carta:</Label>
-      <Input
-        id="cardName"
-        type="text"
-        required
-      />
-      <Label htmlFor="expirationDate">Data di scadenza:</Label>
-      <Input
-        id="expirationDate"
-        type="text"
-        required
-      />
-      <Label htmlFor="cvv">CVV:</Label>
-      <Input
-        id="cvv"
-        type="text"
-        required
-      />
+      <div className="row">
+        <div className="col-12">
+          <InputGroup>
+            <Label htmlFor="cardNumber">Card Number</Label>
+            <Input
+              id="cardNumber"
+              type="text"
+              required
+            />
+          </InputGroup>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
+          <InputGroup>
+            <Label htmlFor="cardName">Card Holder</Label>
+            <Input
+              id="cardName"
+              type="text"
+              required
+            />
+          </InputGroup>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-4">
+          <InputGroup>
+            <Label htmlFor="expirationYear">Expiration Date</Label>
+            <Input
+              id="expirationYear"
+              type="text"
+              required
+            />
+          </InputGroup>
+        </div>
+        <div className="col-4">
+          <InputGroup>
+            <Input
+              id="expirationMonth"
+              type="text"
+              required
+            />
+          </InputGroup>
+        </div>
+        <div className="col-4">
+          <InputGroup>
+            <Label htmlFor="cvv">CVV</Label>
+            <Input
+              id="cvv"
+              type="text"
+              required
+            />
+          </InputGroup>
+        </div>
+      </div>
       <button type="submit">Salva</button>
     </>
   )
