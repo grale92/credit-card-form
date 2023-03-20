@@ -15,7 +15,7 @@ export const BaseStyles = createGlobalStyle`
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-
+  
   .row {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

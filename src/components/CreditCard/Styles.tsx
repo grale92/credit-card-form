@@ -28,3 +28,36 @@ export const CardVendor = styled.img`
   width: 65px;
   right: 20px;
 `;
+
+export const CardHolderLabel = styled.div`
+  font-family: 'OCR A Std', sans-serif;
+  position: absolute;
+  bottom: 50px;
+  font-size: 0.7em;
+  color: #FFF;
+  opacity: 0.7;
+`;
+
+export const ExpiresLabel = styled(CardHolderLabel)`
+  right: 20px;
+`;
+
+export const CardHolderValue = styled.div`
+  font-family: 'OCR A Std', sans-serif;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1em;
+  color: #FFF;
+`;
+
+export const ExpiresValue = styled(CardHolderValue)`
+  right: 20px;
+`;
+
+export const CardNumber = styled.div`
+  font-family: 'OCR A Std', sans-serif;
+  position: absolute;
+  top: 120px;
+  font-size: 1.3em;
+  color: #FFF;
+`;
