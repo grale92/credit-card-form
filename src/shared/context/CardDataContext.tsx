@@ -1,5 +1,7 @@
 import React, { createContext, useState } from 'react';
 
+type CardSide = "front" | "back";
+
 interface CardContextType {
   cardData: {
     cardNumber: string;
@@ -7,6 +9,7 @@ interface CardContextType {
     expirationYear: string;
     expirationMonth: string;
     cvv: string;
+    side: CardSide;
   }
   updateCardData: (fieldName: string, value: string) => void;
 }
@@ -17,7 +20,8 @@ const initialValues: CardContextType = {
     cardHolder: "",
     expirationYear: "",
     expirationMonth: "",
-    cvv: ""
+    cvv: "",
+    side: "front" as CardSide
   },
   updateCardData: () => {}
 };
@@ -30,7 +34,8 @@ export const CardDataProvider = ({ children }: { children: React.ReactNode}) => 
     cardHolder: "",
     expirationYear: "",
     expirationMonth: "",
-    cvv: ""
+    cvv: "",
+    side: "front" as CardSide
   });
 
   const updateCardData = (fieldName: string, value: string) => {

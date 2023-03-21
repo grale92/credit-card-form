@@ -71,6 +71,8 @@ export default function FormContainer() {
               onChange={e => updateCardData("cvv", e.target.value)}
               maxLength={3}
               required
+              onFocus={() => updateCardData("side", "back")}
+              onBlur={() => updateCardData("side", "front")}
             />
           </InputGroup>
         </div>
