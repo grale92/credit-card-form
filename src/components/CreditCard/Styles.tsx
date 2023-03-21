@@ -15,12 +15,12 @@ export const CardContainer = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  transition: transform 1s;
+  transition: transform 0.7s;
   transform-style: preserve-3d;
 
   &.rotate {
     transform: rotateY( 180deg );
-    transition: transform 1s;
+    transition: transform 0.7s;
   }
 `;
 
@@ -55,7 +55,8 @@ export const Chip = styled.img`
 
 export const CardVendor = styled.img`
   position: absolute;
-  width: 65px;
+  height: 50px;
+  top: 22px;
   right: 20px;
 `;
 
@@ -115,7 +116,7 @@ export const CvvTextBox = styled.div`
 export const CardVendorBack = styled.img`
   position: absolute;
   top: 100px;
-  width: 60px;
+  height: 48px;
   opacity: 0.7;
   right: 20px;
 `;

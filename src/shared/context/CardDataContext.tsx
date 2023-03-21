@@ -2,6 +2,8 @@ import React, { createContext, useState } from 'react';
 
 type CardSide = "front" | "back";
 
+type CardCompany = "mastercard" | "visa" | "amex" | "discover" | "";
+
 interface CardContextType {
   cardData: {
     cardNumber: string;
@@ -10,6 +12,7 @@ interface CardContextType {
     expirationMonth: string;
     cvv: string;
     side: CardSide;
+    company: CardCompany;
   }
   updateCardData: (fieldName: string, value: string) => void;
 }
@@ -21,7 +24,8 @@ const initialValues: CardContextType = {
     expirationYear: "",
     expirationMonth: "",
     cvv: "",
-    side: "front" as CardSide
+    side: "front" as CardSide,
+    company: "" as CardCompany
   },
   updateCardData: () => {}
 };
@@ -35,7 +39,8 @@ export const CardDataProvider = ({ children }: { children: React.ReactNode}) => 
     expirationYear: "",
     expirationMonth: "",
     cvv: "",
-    side: "front" as CardSide
+    side: "front" as CardSide,
+    company: "" as CardCompany
   });
 
   const updateCardData = (fieldName: string, value: string) => {

@@ -1,14 +1,40 @@
 import { useContext } from "react";
 import { CardDataContext } from "../../shared/context/CardDataContext";
-import { Input, InputGroup, Label } from "./Styles";
+import { formatCardNumber, getCardCompany } from "../../shared/utils/functions";
+import { Input, InputGroup, Label, Select } from "./Styles";
 
 export default function FormContainer() {
   const { cardData, updateCardData } = useContext(CardDataContext);
 
   const onCardNumberChanged = (newValue: string) => {
-    const formatRegex = /(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})/g;
-    const formattedCardNumber = Array.from(newValue.replaceAll(/\D/g, '').matchAll(formatRegex))[0].slice(1, 5).join(' ').trim();
+    const unspacedCardNumber = newValue.replaceAll(/\D/g, '').trim();
+    const company = getCardCompany(unspacedCardNumber);
+    let formattedCardNumber = unspacedCardNumber;
+    if (company) {
+      formattedCardNumber = formatCardNumber(company, unspacedCardNumber);
+    }
+    updateCardData("company", company);
     updateCardData("cardNumber", formattedCardNumber);
+  }
+
+  const renderYearOptions = () => {
+    let yearsArray = [<option key="yOption-empty" value="" disabled selected>Year</option>];
+    const currentYear = new Date().getFullYear().toString().substring(2);
+    const currentYearNumber = Number.parseInt(currentYear);
+    for (let i = currentYearNumber; i <= currentYearNumber + 12; i++) {
+      const value = i.toString();
+      yearsArray.push(<option key={`yOption-${value}`} value={value}>{value}</option>);
+    }
+    return yearsArray;
+  }
+
+  const renderMonthOptions = () => {
+    let monthsArray = [<option key="mOption-empty" value="" disabled selected>Month</option>];
+    for (let i = 1; i <= 12; i++) {
+      const value = i.toString().padStart(2, "0");
+      monthsArray.push(<option key={`mOption-${value}`} value={value}>{ value }</option>)
+    }
+    return monthsArray;
   }
 
   return (
@@ -44,21 +70,27 @@ export default function FormContainer() {
       <div className="row">
         <div className="col-4">
           <InputGroup>
-            <Label htmlFor="expirationYear">Expiration Date</Label>
-            <Input
-              id="expirationYear"
-              type="text"
+            <Select
+              id="expirationMonth"
               required
-            />
+              value={cardData.expirationMonth}
+              onChange={e => updateCardData("expirationMonth", e.target.value)}
+            >
+              { renderMonthOptions() }
+            </Select>
           </InputGroup>
         </div>
         <div className="col-4">
           <InputGroup>
-            <Input
-              id="expirationMonth"
-              type="text"
+            <Label htmlFor="expirationYear">Expiration Date</Label>
+            <Select
+              id="expirationYear"
               required
-            />
+              value={cardData.expirationYear}
+              onChange={e => updateCardData("expirationYear", e.target.value)}
+            >
+              { renderYearOptions() }
+            </Select>
           </InputGroup>
         </div>
         <div className="col-4">

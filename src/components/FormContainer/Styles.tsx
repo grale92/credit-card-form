@@ -19,6 +19,16 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
+export const Select = styled.select`
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+`;
+
 export const Label = styled.label`
   font-size: 0.7rem;
   margin-bottom: 0.5rem;
