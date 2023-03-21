@@ -2,9 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import { color } from "../../shared/utils/mixins";
 
 export const BaseStyles = createGlobalStyle`
-
   html, body {
     min-width: 768px;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important; 
   }
 
   body {

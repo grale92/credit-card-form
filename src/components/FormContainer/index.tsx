@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CardDataContext } from "../../shared/context/CardDataContext";
 import { formatCardNumber, getCardCompany } from "../../shared/utils/functions";
-import { Input, InputGroup, Label, Select } from "./Styles";
+import { Button, Input, InputGroup, Label, Select } from "./Styles";
 
 export default function FormContainer() {
   const { cardData, updateCardData } = useContext(CardDataContext);
@@ -70,6 +70,7 @@ export default function FormContainer() {
       <div className="row">
         <div className="col-4">
           <InputGroup>
+            <Label htmlFor="expirationYear">Expiration Date</Label>
             <Select
               id="expirationMonth"
               required
@@ -82,7 +83,6 @@ export default function FormContainer() {
         </div>
         <div className="col-4">
           <InputGroup>
-            <Label htmlFor="expirationYear">Expiration Date</Label>
             <Select
               id="expirationYear"
               required
@@ -109,7 +109,7 @@ export default function FormContainer() {
           </InputGroup>
         </div>
       </div>
-      <button type="submit">Salva</button>
+      <Button onClick={() => console.log("Submit!")}>Submit</Button>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { color } from "../../shared/utils/mixins";
 
 export const InputGroup = styled.div`
   display: flex;
@@ -30,6 +31,21 @@ export const Select = styled.select`
 `;
 
 export const Label = styled.label`
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   margin-bottom: 0.5rem;
+  color: ${color.secondaryLight};
+  font-weight: 600;
+  font-smooth: always;
 `;
+
+export const Button = styled.button`
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  color: ${color.secondaryLight};
+  font-weight: 700;
+  background-color: ${color.primary};
+  border-radius: 5px;
+  cursor: pointer;
+`
