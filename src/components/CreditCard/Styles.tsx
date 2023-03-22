@@ -27,7 +27,6 @@ export const Card = styled.div`
   background-image: url(${cardBg});
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
