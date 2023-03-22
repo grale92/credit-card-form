@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CardDataContext } from "../../shared/context/CardDataContext";
 import { formatCardNumber, getCardCompany } from "../../shared/utils/functions";
-import { Button, Input, InputGroup, Label, Select } from "./Styles";
+import { Button, Container, Input, InputGroup, Label, Select } from "./Styles";
 
 export default function FormContainer() {
   const { cardData, updateCardData } = useContext(CardDataContext);
@@ -12,6 +12,8 @@ export default function FormContainer() {
     let formattedCardNumber = unspacedCardNumber;
     if (company) {
       formattedCardNumber = formatCardNumber(company, unspacedCardNumber);
+    } else {
+      formattedCardNumber = unspacedCardNumber.substring(0, 16);
     }
     updateCardData("company", company);
     updateCardData("cardNumber", formattedCardNumber);
@@ -38,7 +40,7 @@ export default function FormContainer() {
   }
 
   return (
-    <>
+    <Container>
       <div className="row">
         <div className="col-12">
           <InputGroup>
@@ -110,6 +112,6 @@ export default function FormContainer() {
         </div>
       </div>
       <Button onClick={() => console.log("Submit!")}>Submit</Button>
-    </>
+    </Container>
   )
 }

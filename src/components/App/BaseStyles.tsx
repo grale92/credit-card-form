@@ -4,6 +4,7 @@ import { color } from "../../shared/utils/mixins";
 export const BaseStyles = createGlobalStyle`
   html, body {
     min-width: 768px;
+    height: 100%;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important; 
@@ -16,6 +17,13 @@ export const BaseStyles = createGlobalStyle`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  #root {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .row {

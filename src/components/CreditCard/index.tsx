@@ -22,6 +22,11 @@ export default function CreditCard() {
     return arrayStr.join("");
   }
 
+  const showCensoredCardNumber = (cardNumber: string) => {
+    const censoredCardNumber = cardNumber.substring(0, 4) + cardNumber.substring(4, 14).replace(/\d/g, "*") + cardNumber.substring(14); 
+    return censoredCardNumber;
+  }
+
   const getVendorSrc = () => {
     if (cardData.company === "mastercard") {
       return mastercard;
@@ -41,9 +46,9 @@ export default function CreditCard() {
         <Card className="front">
           <Chip src={chip} />
           <CardVendor src={getVendorSrc()} />
-          <CardNumber>{ cardData.cardNumber }</CardNumber>
+          <CardNumber>{ showCensoredCardNumber(cardData.cardNumber) }</CardNumber>
           <CardHolderLabel>Card Holder</CardHolderLabel>
-          <CardHolderValue>{ cardData.cardHolder }</CardHolderValue>
+          <CardHolderValue>{ cardData.cardHolder ? cardData.cardHolder.toUpperCase() : "FULL NAME" }</CardHolderValue>
           <ExpiresLabel>Expires</ExpiresLabel>
           <ExpiresValue>{ cardData.expirationMonth ? cardData.expirationMonth : "MM" }/{ cardData.expirationYear ? cardData.expirationYear : "YY" }</ExpiresValue>
         </Card>

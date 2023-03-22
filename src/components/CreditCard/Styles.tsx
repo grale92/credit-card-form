@@ -2,12 +2,8 @@ import styled from "styled-components";
 import cardBg from "../../shared/assets/img/card-bg.jpeg";
 
 export const ContentBox = styled.div`
-  position: absolute;
   width: 400px;
   height: 254px;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   perspective: 1000px;
 `;
 
