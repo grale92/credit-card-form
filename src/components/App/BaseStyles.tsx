@@ -3,8 +3,9 @@ import { color } from "../../shared/utils/mixins";
 
 export const BaseStyles = createGlobalStyle`
   html, body {
-    min-width: 768px;
+    min-height: 768px;
     height: 100%;
+    width: 100%;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important; 
