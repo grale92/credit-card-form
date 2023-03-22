@@ -5,6 +5,12 @@ export const ContentBox = styled.div`
   width: 400px;
   height: 254px;
   perspective: 1000px;
+  z-index: 10;
+
+  @media (max-width: 500px) {
+    width: 280px;
+    height: 177.8px;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -18,6 +24,7 @@ export const CardContainer = styled.div`
     transform: rotateY( 180deg );
     transition: transform 0.7s;
   }
+
 `;
 
 export const Card = styled.div`
@@ -46,6 +53,10 @@ export const Card = styled.div`
 export const Chip = styled.img`
   position: absolute;
   width: 65px;
+
+  @media (max-width: 500px) {
+    width: 55px;
+  }
 `;
 
 export const CardVendor = styled.img`
@@ -53,6 +64,10 @@ export const CardVendor = styled.img`
   height: 50px;
   top: 22px;
   right: 20px;
+
+  @media (max-width: 500px) {
+    height: 40px;
+  }
 `;
 
 export const CardHolderLabel = styled.div`
@@ -61,6 +76,10 @@ export const CardHolderLabel = styled.div`
   bottom: 50px;
   font-size: 0.7em;
   opacity: 0.7;
+
+  @media (max-width: 500px) {
+    bottom: 45px;
+  }
 `;
 
 export const ExpiresLabel = styled(CardHolderLabel)`
@@ -72,6 +91,10 @@ export const CardHolderValue = styled.div`
   position: absolute;
   bottom: 20px;
   font-size: 1em;
+
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
 `;
 
 export const ExpiresValue = styled(CardHolderValue)`
@@ -83,6 +106,11 @@ export const CardNumber = styled.div`
   position: absolute;
   top: 120px;
   font-size: 1.3em;
+
+  @media (max-width: 500px) {
+    top: 85px;
+    font-size: 1em;
+  }
 `;
 
 export const CvvLabel = styled.p`
@@ -106,6 +134,12 @@ export const CvvTextBox = styled.div`
   text-align: right;
   padding: 11px;
   box-sizing: border-box;
+
+  @media (max-width: 500px) {
+    width: 85%;
+    height: 35px;
+    font-size: 1em;
+  }
 `;
 
 export const CardVendorBack = styled.img`
@@ -114,4 +148,9 @@ export const CardVendorBack = styled.img`
   height: 48px;
   opacity: 0.7;
   right: 20px;
+
+  @media (max-width: 500px) {
+    top: 80px;
+    height: 39px;
+  }
 `;

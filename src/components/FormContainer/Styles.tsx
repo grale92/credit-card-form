@@ -7,6 +7,11 @@ export const Container = styled.form`
   padding: 150px 20px 20px 20px;
   margin-top: -120px;
   box-sizing: border-box;
+
+  @media (max-width: 500px) {
+    padding: 100px 20px 20px 20px;
+    margin-top: -80px;
+  }
 `;
 
 export const InputGroup = styled.div`

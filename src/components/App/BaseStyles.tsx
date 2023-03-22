@@ -4,6 +4,7 @@ import { color } from "../../shared/utils/mixins";
 export const BaseStyles = createGlobalStyle`
   html, body {
     min-height: 768px;
+    min-width: 300px;
     height: 100%;
     width: 100%;
     text-rendering: optimizeLegibility !important;
